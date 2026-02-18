@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Mastery 2026 - Ultimate Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap');
+        
+        :root {
+            --neon-orange: #ff6b35;
+            --neon-yellow: #ffd23f;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px var(--neon-orange), 0 0 20px var(--neon-orange);
+        }
+        
+        .neon-border {
+            box-shadow: 0 0 10px var(--neon-orange), inset 0 0 10px rgba(255, 107, 53, 0.2);
+        }
+        
+        .glass-card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gun-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+        }
+        
+        .sensitivity-slider {
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 5px;
+            background: linear-gradient(to right, var(--neon-orange), var(--neon-yellow));
+            outline: none;
+        }
+        
+        .sensitivity-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--neon-orange);
+        }
+        
+        .tab-active {
+            background: linear-gradient(135deg, var(--neon-orange), #ff8c42);
+            color: black;
+            font-weight: bold;
+        }
+        
+        .device-card {
+            transition: all 0.3s ease;
+        }
+        
+        .device-card:hover {
+            transform: scale(1.05);
+            border-color: var(--neon-orange);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 107, 53, 0.8); }
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        .crosshair {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--neon-orange);
+            border-radius: 50%;
+            pointer-events: none;
+            transition: all 0.1s;
+            z-index: 50;
+        }
+        
+        .crosshair::before, .crosshair::after {
+            content: '';
+            position: absolute;
+            background: var(--neon-orange);
+        }
+        
+        .crosshair::before {
+            width: 2px;
+            height: 10px;
+            left: 50%;
+            top: -5px;
+            transform: translateX(-50%);
+        }
+        
+        .crosshair::after {
+            width: 10px;
+            height: 2px;
+            top: 50%;
+            left: -5px;
+            transform: translateY(-50%);
+        }
+        
+        .stat-bar {
+            height: 8px;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .stat-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-orange), var(--neon-yellow));
+            transition: width 1s ease;
+        }
+        
+        .parallax-bg {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 210, 63, 0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="parallax-bg">
+    <!-- Custom Cursor -->
+    <div id="crosshair" class="crosshair hidden md:block"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-card border-b border-orange-500/30">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-fire text-3xl text-orange-500 animate-pulse"></i>
+                <span class="font-orbitron text-2xl font-bold gradient-text">FF MASTERY 2026</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#guns" class="hover:text-orange-400 transition">Weapons</a>
+                <a href="#sensitivity" class="hover:text-orange-400 transition">Sensitivity</a>
+                <a href="#devices" class="hover:text-orange-400 transition">Devices</a>
+                <a href="#ranking" class="hover:text-orange-400 transition">Rank Up</a>
+                <a href="#pc-guide" class="hover:text-orange-400 transition">PC vs Mobile</a>
+            </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card p-4">
+            <a href="#guns" class="block py-2 hover:text-orange-400">Weapons</a>
+            <a href="#sensitivity" class="block py-2 hover:text-orange-400">Sensitivity</a>
+            <a href="#devices" class="block py-2 hover:text-orange-400">Devices</a>
+            <a href="#ranking" class="block py-2 hover:text-orange-400">Rank Up</a>
+            <a href="#pc-guide" class="block py-2 hover:text-orange-400">PC vs Mobile</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-orange-500 rounded-full filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-yellow-500 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-black mb-6 leading-tight">
+                MASTER <span class="gradient-text">FREE FIRE</span><br>
+                <span class="text-3xl md:text-5xl">LIKE A PRO</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                2026 Ultimate Guide: Headshot mechanics, perfect sensitivity settings, ranking strategies, and device optimization
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('guns')" class="px-8 py-4 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full font-bold text-black text-lg hover:scale-105 transition transform pulse-glow">
+                    <i class="fas fa-crosshairs mr-2"></i>Master Weapons
+                </button>
+                <button onclick="scrollToSection('sensitivity')" class="px-8 py-4 border-2 border-orange-500 rounded-full font-bold text-lg hover:bg-orange-500/20 transition">
+                    <i class="fas fa-sliders-h mr-2"></i>Get Sensitivity
+                </button>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-3xl font-bold text-orange-400">50+</div>
+                    <div class="text-sm text-gray-400">Weapons Analyzed</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-3xl font-bold text-yellow-400">100+</div>
+                    <div class="text-sm text-gray-400">Device Settings</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-3xl font-bold text-orange-400">Grandmaster</div>
+                    <div class="text-sm text-gray-400">Ranking Tips</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl">
+                    <div class="text-3xl font-bold text-yellow-400">2026</div>
+                    <div class="text-sm text-gray-400">Latest Meta</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weapons Guide Section -->
+    <section id="guns" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="font-orbitron text-4xl md:text-5xl font-bold text-center mb-4">
+                <span class="gradient-text">WEAPON MASTERY</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">Click on any weapon to see detailed headshot techniques</p>
+            
+            <!-- Weapon Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterWeapons('all')" class="weapon-tab tab-active px-6 py-2 rounded-full transition" data-category="all">All</button>
+                <button onclick="filterWeapons('ar')" class="weapon-tab px-6 py-2 rounded-full bg-gray-800 hover:bg-gray-700 transition" data-category="ar">Assault Rifles</button>
+                <button onclick="filterWeapons('smg')" class="weapon-tab px-6 py-2 rounded-full bg-gray-800 hover:bg-gray-700 transition" data-category="smg">SMGs</button>
+                <button onclick="filterWeapons('sniper')" class="weapon-tab px-6 py-2 rounded-full bg-gray-800 hover:bg-gray-700 transition" data-category="sniper">Snipers</button>
+                <button onclick="filterWeapons('shotgun')" class="weapon-tab px-6 py-2 rounded-full bg-gray-800 hover:bg-gray-700 transition" data-category="shotgun">Shotguns</button>
+            </div>
+
+            <div id="weapons-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Weapons will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Weapon Detail Modal -->
+    <div id="weapon-modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-2xl p-6 relative">
+            <button onclick="closeWeaponModal()" class="absolute top-4 right-4 text-2xl hover:text-orange-500">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="weapon-detail-content"></div>
+        </div>
+    </div>
+
+    <!-- Sensitivity Calculator Section -->
+    <section id="sensitivity" class="py-20 bg-black/50">
+        <div class="container mx-auto px-4">
+            <h2 class="font-orbitron text-4xl md:text-5xl font-bold text-center mb-4">
+                <span class="gradient-text">SENSITIVITY CALCULATOR</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">2026 Updated Settings for Every Device</p>
+            
+            <div class="max-w-4xl mx-auto glass-card rounded-2xl p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-lg font-bold mb-2">Select Your Device</label>
+                        <select id="device-select" onchange="updateSensitivity()" class="w-full p-4 bg-gray-800 rounded-lg border border-orange-500/30 focus:border-orange-500 outline-none">
+                            <option value="">Choose Device...</option>
+                            <optgroup label="iPhone">
+                                <option value="iphone15pm">iPhone 15 Pro Max</option>
+                                <option value="iphone15">iPhone 15/15 Pro</option>
+                                <option value="iphone14pm">iPhone 14 Pro Max</option>
+                                <option value="iphone13">iPhone 13 Series</option>
+                                <option value="iphonese">iPhone SE (2022)</option>
+                            </optgroup>
+                            <optgroup label="Samsung">
+                                <option value="s24u">Samsung S24 Ultra</option>
+                                <option value="s24">Samsung S24/S24+</option>
+                                <option value="s23u">Samsung S23 Ultra</option>
+                                <option value="zfold">Galaxy Z Fold 5</option>
+                                <option value="a54">Galaxy A54</option>
+                            </optgroup>
+                            <optgroup label="OnePlus">
+                                <option value="op12">OnePlus 12</option>
+                                <option value="op11">OnePlus 11</option>
+                                <option value="op10p">OnePlus 10 Pro</option>
+                                <option value="opnord">OnePlus Nord 3</option>
+                            </optgroup>
+                            <optgroup label="Xiaomi">
+                                <option value="mi14">Xiaomi 14 Ultra</option>
+                                <option value="mi13">Xiaomi 13 Pro</option>
+                                <option value="poco6">Poco F6 Pro</option>
+                                <option value="redk70">Redmi K70</option>
+                            </optgroup>
+                            <optgroup label="Google">
+                                <option value="px8p">Pixel 8 Pro</option>
+                                <option value="px8">Pixel 8</option>
+                                <option value="px7">Pixel 7 Series</option>
+                            </optgroup>
+                            <optgroup label="Gaming Phones">
+                                <option value="rog8">ROG Phone 8</option>
+                                <option value="red9">RedMagic 9 Pro</option>
+                                <option value="black6">Black Shark 6</option>
+                                <option value="legion">Legion Y90</option>
+                            </optgroup>
+                            <optgroup label="iPad/Tablets">
+                                <option value="ipadpro">iPad Pro M2/M4</option>
+                                <option value="ipadair">iPad Air</option>
+                                <option value="s9u">Galaxy Tab S9 Ultra</option>
+                            </optgroup>
+                        </select>
+                        
+                        <div class="mt-6">
+                            <label class="block text-lg font-bold mb-2">Play Style</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button onclick="setPlayStyle('aggressive')" class="play-style-btn p-3 bg-gray-800 rounded-lg border border-gray-600 hover:border-orange-500 transition text-sm" data-style="aggressive">
+                                    <i class="fas fa-bolt mb-1 block"></i>Aggressive
+                                </button>
+                                <button onclick="setPlayStyle('balanced')" class="play-style-btn p-3 bg-gray-800 rounded-lg border border-orange-500 bg-orange-500/20 transition text-sm" data-style="balanced">
+                                    <i class="fas fa-balance-scale mb-1 block"></i>Balanced
+                                </button>
+                                <button onclick="setPlayStyle('passive')" class="play-style-btn p-3 bg-gray-800 rounded-lg border border-gray-600 hover:border-orange-500 transition text-sm" data-style="passive">
+                                    <i class="fas fa-shield-alt mb-1 block"></i>Passive
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="sensitivity-results" class="space-y-4">
+                        <div class="text-center text-gray-500 py-8">
+                            <i class="fas fa-mobile-alt text-4xl mb-2"></i>
+                            <p>Select your device to see recommended settings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Custom Sensitivity Tester -->
+            <div class="max-w-4xl mx-auto mt-8 glass-card rounded-2xl p-8">
+                <h3 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-gamepad text-orange-500 mr-2"></i>
+                    Aim Training Simulator
+                </h3>
+                <div id="aim-trainer" class="relative h-64 bg-gray-900 rounded-lg overflow-hidden cursor-crosshair border-2 border-orange-500/30">
+                    <div class="absolute inset-0 flex items-center justify-center text-gray-600 pointer-events-none">
+                        <span>Click targets as they appear!</span>
+                    </div>
+                    <div id="score-display" class="absolute top-4 left-4 text-2xl font-bold">Score: 0</div>
+                    <div id="accuracy-display" class="absolute top-4 right-4 text-2xl font-bold">Accuracy: 100%</div>
+                </div>
+                <button onclick="startAimTrainer()" class="mt-4 w-full py-3 bg-orange-600 hover:bg-orange-700 rounded-lg font-bold transition">
+                    Start Training
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Device Guide Section -->
+    <section id="devices" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="font-orbitron text-4xl md:text-5xl font-bold text-center mb-4">
+                <span class="gradient-text">OPTIMAL DEVICES</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">Choose the right hardware for competitive advantage</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Mobile Tier -->
+                <div class="device-card glass-card rounded-2xl p-6 border-2 border-gray-700">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-mobile-alt text-5xl text-orange-400 mb-2"></i>
+                        <h3 class="text-2xl font-bold">Mobile Gaming</h3>
+                        <span class="text-sm text-gray-400">Entry to Mid Level</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Portable & Convenient</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Gyroscope Aim</li>
+                        <li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i>Small Screen</li>
+                        <li class="flex items-center"><i class="fas fa-times text-red-500 mr-2"></i>Battery/Heat Issues</li>
+                    </ul>
+                    <div class="space-y-2">
+                        <div class="text-xs font-bold text-gray-400">RECOMMENDED:</div>
+                        <div class="bg-gray-800 p-2 rounded text-sm">iPhone 15 Pro Max</div>
+                        <div class="bg-gray-800 p-2 rounded text-sm">ROG Phone 8</div>
+                        <div class="bg-gray-800 p-2 rounded text-sm">RedMagic 9 Pro</div>
+                    </div>
+                </div>
+
+                <!-- Tablet Tier -->
+                <div class="device-card glass-card rounded-2xl p-6 border-2 border-orange-500 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-orange-500 text-black text-xs font-bold px-3 py-1 rounded-bl-lg">BEST VALUE</div>
+                    <div class="text-center mb-4">
+                        <i class="fas fa-tablet-alt text-5xl text-yellow-400 mb-2"></i>
+                        <h3 class="text-2xl font-bold">Tablet Gaming</h3>
+                        <span class="text-sm text-gray-400">Competitive Sweet Spot</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Larger Field of View</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Better Headshot Accuracy</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>4-6 Finger Claw</li>
+                        <li class="flex items-center"><i class="fas fa-minus text-yellow-500 mr-2"></i>Less Portable</li>
+                    </ul>
+                    <div class="space-y-2">
+                        <div class="text-xs font-bold text-gray-400">RECOMMENDED:</div>
+                        <div class="bg-gray-800 p-2 rounded text-sm border border-orange-500/30">iPad Pro 11" M4</div>
+                        <div class="bg-gray-800 p-2 rounded text-sm">iPad Air M2</div>
+                        <div class="bg-gray-800 p-2 rounded text-sm">Galaxy Tab S9</div>
+                    </div>
+                </div>
+
+                <!-- PC Tier -->
+                <div class="device-card glass-card rounded-2xl p-6 border-2 border-purple-500">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-desktop text-5xl text-purple-400 mb-2"></i>
+                        <h3 class="text-2xl font-bold">PC Emulators</h3>
+                        <span class="text-sm text-gray-400">Maximum Performance</span>
+                    </div>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>144Hz+ Refresh Rate</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Mouse Precision</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>No Battery Limits</li>
+                        <li class="flex items-center"><i class="fas fa-exclamation text-yellow-500 mr-2"></i>Separate Lobbies</li>
+                    </ul>
+                    <div class="space-y-2">
+                        <div class="text-xs font-bold text-gray-400">RECOMMENDED:</div>
+                        <div class="bg-gray-800 p-2 rounded text-sm border border-purple-500/30">RTX 4060 + i5-13400</div>
+                        <div class="bg-gray-800 p-2 rounded text-sm">RTX 3060 + Ryzen 5</div>
+                        <div class="bg-gray-800 p-2 rounded text-sm">GTX 1660 Super</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Device Comparison Table -->
+            <div class="max-w-6xl mx-auto mt-12 glass-card rounded-2xl p-6 overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="pb-4">Feature</th>
+                            <th class="pb-4 text-orange-400">Mobile</th>
+                            <th class="pb-4 text-yellow-400">Tablet</th>
+                            <th class="pb-4 text-purple-400">PC Emulator</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-800">
+                            <td class="py-3">Aim Precision</td>
+                            <td>⭐⭐⭐</td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="py-3">Mobility</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td>⭐⭐⭐</td>
+                            <td>⭐</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="py-3">Field of View</td>
+                            <td>⭐⭐⭐</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="py-3">Reaction Time</td>
+                            <td>⭐⭐⭐</td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Matchmaking Pool</td>
+                            <td>Mixed</td>
+                            <td>Mixed</td>
+                            <td>Emulator Only</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ranking Guide Section -->
+    <section id="ranking" class="py-20 bg-black/50">
+        <div class="container mx-auto px-4">
+            <h2 class="font-orbitron text-4xl md:text-5xl font-bold text-center mb-4">
+                <span class="gradient-text">RANK UP STRATEGY</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">From Bronze to Grandmaster - The Complete Roadmap</p>
+            
+            <div class="max-w-5xl mx-auto">
+                <!-- Rank Tiers -->
+                <div class="relative">
+                    <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500 to-yellow-500"></div>
+                    
+                    <div class="space-y-12">
+                        <!-- Bronze-Silver -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                                <h3 class="text-2xl font-bold text-gray-400">Bronze - Gold</h3>
+                                <p class="text-gray-500">Foundation Building</p>
+                            </div>
+                            <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-gray-400 rounded-full border-4 border-black"></div>
+                            <div class="md:w-1/2 md:pl-8 ml-12 md:ml-0 glass-card p-4 rounded-xl">
+                                <ul class="text-sm space-y-1">
+                                    <li>• Learn basic recoil patterns</li>
+                                    <li>• Master 2-finger claw</li>
+                                    <li>• Land at remote locations</li>
+                                    <li>• Focus on survival time</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Platinum-Diamond -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0 order-1 md:order-1">
+                                <div class="glass-card p-4 rounded-xl">
+                                    <ul class="text-sm space-y-1">
+                                        <li>• Transition to 4-finger claw</li>
+                                        <li>• Learn character skill combos</li>
+                                        <li>• Master MP40 & M1887</li>
+                                        <li>• Play for placement + kills</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-black"></div>
+                            <div class="md:w-1/2 md:pl-8 ml-12 md:ml-0 order-2 md:order-2">
+                                <h3 class="text-2xl font-bold text-cyan-400">Platinum - Diamond</h3>
+                                <p class="text-gray-500">Skill Development</p>
+                            </div>
+                        </div>
+
+                        <!-- Heroic -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                                <h3 class="text-2xl font-bold text-purple-400">Heroic</h3>
+                                <p class="text-gray-500">Advanced Tactics</p>
+                            </div>
+                            <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-black"></div>
+                            <div class="md:w-1/2 md:pl-8 ml-12 md:ml-0 glass-card p-4 rounded-xl">
+                                <ul class="text-sm space-y-1">
+                                    <li>• Perfect drag headshots</li>
+                                    <li>• Squad coordination</li>
+                                    <li>• Gloo Wall strategies</li>
+                                    <li>• Map control & rotations</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Grandmaster -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0 order-1 md:order-1">
+                                <div class="glass-card p-4 rounded-xl border-2 border-yellow-500/50">
+                                    <ul class="text-sm space-y-1">
+                                        <li>• 0ms reaction time</li>
+                                        <li>• Prefire angles</li>
+                                        <li>• Mental game & consistency</li>
+                                        <li>• Tournament preparation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-6 h-6 bg-yellow-400 rounded-full border-4 border-black animate-pulse"></div>
+                            <div class="md:w-1/2 md:pl-8 ml-12 md:ml-0 order-2 md:order-2">
+                                <h3 class="text-2xl font-bold text-yellow-400">Grandmaster</h3>
+                                <p class="text-gray-500">Elite Performance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RP Calculator -->
+                <div class="mt-16 glass-card rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Rank Points Calculator</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Current Rank</label>
+                            <select id="current-rank" class="w-full p-3 bg-gray-800 rounded-lg border border-gray-600">
+                                <option value="0">Bronze</option>
+                                <option value="500">Silver</option>
+                                <option value="1000">Gold</option>
+                                <option value="1500">Platinum</option>
+                                <option value="2000">Diamond</option>
+                                <option value="2500">Heroic</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Average Placement</label>
+                            <select id="avg-placement" class="w-full p-3 bg-gray-800 rounded-lg border border-gray-600">
+                                <option value="100">#1 (Booyah)</option>
+                                <option value="80">Top 3</option>
+                                <option value="60">Top 5</option>
+                                <option value="40">Top 10</option>
+                                <option value="20">Top 20</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Kills per Match</label>
+                            <input type="number" id="kills-per-match" value="3" min="0" max="20" class="w-full p-3 bg-gray-800 rounded-lg border border-gray-600 text-center">
+                        </div>
+                    </div>
+                    <button onclick="calculateRankProgress()" class="mt-6 w-full py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-bold rounded-lg hover:opacity-90 transition">
+                        Calculate Progress
+                    </button>
+                    <div id="rank-result" class="mt-6 p-4 bg-gray-800 rounded-lg hidden">
+                        <!-- Results populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PC vs Mobile Section -->
+    <section id="pc-guide" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="font-orbitron text-4xl md:text-5xl font-bold text-center mb-4">
+                <span class="gradient-text">PC VS MOBILE</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">Understanding the platform differences</p>
+            
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Why PC is Better -->
+                <div class="glass-card rounded-2xl p-6 border-2 border-purple-500/30">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-400 flex items-center">
+                        <i class="fas fa-desktop mr-2"></i>
+                        Why PC Players Have Advantage
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-1">1. Mouse Precision</h4>
+                            <p class="text-sm text-gray-400">Mouse offers pixel-perfect accuracy with DPI adjustments (400-1600 DPI optimal). No finger friction or screen limitations.</p>
+                            <div class="mt-2 stat-bar">
+                                <div class="stat-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-1">2. Higher Refresh Rates</h4>
+                            <p class="text-sm text-gray-400">PC emulators support 144Hz/240Hz monitors vs 60Hz/120Hz mobile. Smoother tracking and faster reaction times.</p>
+                            <div class="mt-2 stat-bar">
+                                <div class="stat-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-1">3. No Input Lag</h4>
+                            <p class="text-sm text-gray-400">Direct USB polling (1000Hz) vs touch latency. PC players can react 20-40ms faster in close combat.</p>
+                            <div class="mt-2 stat-bar">
+                                <div class="stat-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-1">4. Macro & Keybinds</h4>
+                            <p class="text-sm text-gray-400">Custom key mapping allows instant weapon swaps, prone-shooting, and advanced movement techniques.</p>
+                            <div class="mt-2 stat-bar">
+                                <div class="stat-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Beat PC Players -->
+                <div class="glass-card rounded-2xl p-6 border-2 border-orange-500/30">
+                    <h3 class="text-2xl font-bold mb-4 text-orange-400 flex items-center">
+                        <i class="fas fa-mobile-alt mr-2"></i>
+                        How Mobile Can Compete
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-1">1. Gyroscope Mastery</h4>
+                            <p class="text-sm text-gray-400">Use gyro + touch for hybrid aiming. Allows micro-adjustments similar to mouse lift-offs. Practice 360° spins.</p>
+                            <div class="mt-2 flex items-center">
+                                <span class="text-xs bg-orange-500/20 text-orange-300 px-2 py-1 rounded">Pro Tip: 300-400% gyro sensitivity</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-1">2. Close Range Combat</h4>
+                            <p class="text-sm text-gray-400">Mobile auto-aim assist is stronger at <15m. Rush PC players with MP40/M1887 to negate their range advantage.</p>
+                            <div class="mt-2 flex items-center">
+                                <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">Use: Chrono + M1887</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-1">3. Peek Shooting</h4>
+                            <p class="text-sm text-gray-400">Use left/right peek buttons. Harder for PC players to track constant ADAD movement than static targets.</p>
+                            <div class="mt-2 flex items-center">
+                                <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">Enable: Peek & Fire</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg mb-1">4. Gloo Wall Spam</h4>
+                            <p class="text-sm text-gray-400">Mobile quick-gloo buttons allow faster defensive plays. PC players must press keys; you tap screen.</p>
+                            <div class="mt-2 flex items-center">
+                                <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">Equip: 6+ Gloo Walls</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emulator Detection -->
+            <div class="max-w-4xl mx-auto mt-8 glass-card rounded-2xl p-6 border border-red-500/30">
+                <h3 class="text-xl font-bold mb-4 text-red-400">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    Emulator Matchmaking System
+                </h3>
+                <p class="text-gray-300 mb-4">
+                    Garena uses advanced detection to separate PC and mobile players. Using bypass tools results in permanent bans. 
+                    However, some "hybrid" devices like tablets may be matched with low-spec PCs.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div class="p-3 bg-gray-800 rounded-lg">
+                        <div class="text-2xl font-bold text-green-400">Mobile</div>
+                        <div class="text-xs text-gray-400">vs Mobile Only</div>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded-lg">
+                        <div class="text-2xl font-bold text-yellow-400">Tablet</div>
+                        <div class="text-xs text-gray-400">Mixed Pool Possible</div>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded-lg">
+                        <div class="text-2xl font-bold text-red-400">PC</div>
+                        <div class="text-xs text-gray-400">vs PC Only</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center items-center space-x-2 mb-4">
+                <i class="fas fa-fire text-3xl text-orange-500"></i>
+                <span class="font-orbitron text-2xl font-bold gradient-text">FF MASTERY 2026</span>
+            </div>
+            <p class="text-gray-500 mb-4">The ultimate resource for Free Fire competitive play</p>
+            <div class="flex justify-center space-x-4 text-2xl">
+                <a href="#" class="hover:text-orange-500 transition"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-orange-500 transition"><i class="fab fa-discord"></i></a>
+                <a href="#" class="hover:text-orange-500 transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-orange-500 transition"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="mt-8 text-xs text-gray-600">
+                This is an educational guide. Free Fire is a trademark of Garena. 
+                <br>Last Updated: February 2026
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Weapon Database
+        const weapons = [
+            {
+                id: 'mp40',
+                name: 'MP40',
+                category: 'smg',
+                damage: 48,
+                rate: 96,
+                range: 35,
+                accuracy: 65,
+                headshotTip: 'Drag down slightly while firing. Best for close range hip-fire headshots.',
+                image: '🔫'
+            },
+            {
+                id: 'm1887',
+                name: 'M1887',
+                category: 'shotgun',
+                damage: 100,
+                rate: 25,
+                range: 40,
+                accuracy: 70,
+                headshotTip: 'Aim for upper chest - pellet spread will hit head. Jump + shoot for max damage.',
+                image: '🔫'
+            },
+            {
+                id: 'scar',
+                name: 'SCAR',
+                category: 'ar',
+                damage: 66,
+                rate: 65,
+                range: 70,
+                accuracy: 75,
+                headshotTip: 'Pull down steadily for first 10 bullets. Tap-fire for long range headshots.',
+                image: '🔫'
+            },
+            {
+                id: 'ak',
+                name: 'AK',
+                category: 'ar',
+                damage: 78,
+                rate: 58,
+                range: 72,
+                accuracy: 60,
+                headshotTip: 'High recoil - pull down aggressively. 2-tap burst for headshots at range.',
+                image: '🔫'
+            },
+            {
+                id: 'm4a1',
+                name: 'M4A1',
+                category: 'ar',
+                damage: 60,
+                rate: 68,
+                range: 75,
+                accuracy: 80,
+                headshotTip: 'Most stable AR. Slight downward drag. Great for beginners.',
+                image: '🔫'
+            },
+            {
+                id: 'awm',
+                name: 'AWM',
+                category: 'sniper',
+                damage: 90,
+                rate: 20,
+                range: 95,
+                accuracy: 95,
+                headshotTip: 'Lead moving targets. Crouch for stability. Switch to pistol if missed.',
+                image: '🎯'
+            },
+            {
+                id: 'desert',
+                name: 'Desert Eagle',
+                category: 'pistol',
+                damage: 65,
+                rate: 40,
+                range: 50,
+                accuracy: 70,
+                headshotTip: 'Tap slowly for accuracy. 2 headshots to kill. Best secondary weapon.',
+                image: '🔫'
+            },
+            {
+                id: 'ump',
+                name: 'UMP',
+                category: 'smg',
+                damage: 55,
+                rate: 75,
+                range: 45,
+                accuracy: 72,
+                headshotTip: 'Low recoil, aim directly at head. Good for mid-range sprays.',
+                image: '🔫'
+            },
+            {
+                id: 'm60',
+                name: 'M60',
+                category: 'lmg',
+                damage: 70,
+                rate: 60,
+                range: 65,
+                accuracy: 55,
+                headshotTip: 'Bipod + prone for laser accuracy. Great for holding positions.',
+                image: '🔫'
+            }
+        ];
+
+        // Sensitivity Database
+        const sensitivityData = {
+            iphone15pm: { general: 95, redDot: 90, scope2x: 85, scope4x: 75, sniper: 60, gyro: 300 },
+            iphone15: { general: 100, redDot: 95, scope2x: 88, scope4x: 78, sniper: 65, gyro: 310 },
+            iphone14pm: { general: 95, redDot: 90, scope2x: 85, scope4x: 75, sniper: 60, gyro: 300 },
+            iphone13: { general: 100, redDot: 95, scope2x: 88, scope4x: 78, sniper: 65, gyro: 320 },
+            iphonese: { general: 110, redDot: 105, scope2x: 95, scope4x: 85, sniper: 70, gyro: 350 },
+            s24u: { general: 90, redDot: 85, scope2x: 80, scope4x: 70, sniper: 55, gyro: 280 },
+            s24: { general: 95, redDot: 90, scope2x: 85, scope4x: 75, sniper: 60, gyro: 290 },
+            s23u: { general: 90, redDot: 85, scope2x: 80, scope4x: 70, sniper: 55, gyro: 280 },
+            zfold: { general: 85, redDot: 80, scope2x: 75, scope4x: 65, sniper: 50, gyro: 250 },
+            a54: { general: 100, redDot: 95, scope2x: 90, scope4x: 80, sniper: 65, gyro: 320 },
+            op12: { general: 92, redDot: 88, scope2x: 82, scope4x: 72, sniper: 58, gyro: 290 },
+            op11: { general: 95, redDot: 90, scope2x: 85, scope4x: 75, sniper: 60, gyro: 300 },
+            op10p: { general: 95, redDot: 90, scope2x: 85, scope4x: 75, sniper: 60, gyro: 300 },
+            opnord: { general: 100, redDot: 95, scope2x: 90, scope4x: 80, sniper: 65, gyro: 320 },
+            mi14: { general: 88, redDot: 85, scope2x: 80, scope4x: 70, sniper: 55, gyro: 270 },
+            mi13: { general: 92, redDot: 88, scope2x: 83, scope4x: 73, sniper: 58, gyro: 285 },
+            poco6: { general: 95, redDot: 90, scope2x: 85, scope4x: 75, sniper: 60, gyro: 300 },
+            redk70: { general: 95, redDot: 90, scope2x: 85, scope4x: 75, sniper: 60, gyro: 300 },
+            px8p: { general: 90, redDot: 85, scope2x: 80, scope4x: 70, sniper: 55, gyro: 280 },
+            px8: { general: 95, redDot: 90, scope2x: 85, scope4x: 75, sniper: 60, gyro: 290 },
+            px7: { general: 100, redDot: 95, scope2x: 90, scope4x: 80, sniper: 65, gyro: 310 },
+            rog8: { general: 85, redDot: 80, scope2x: 75, scope4x: 65, sniper: 50, gyro: 250 },
+            red9: { general: 85, redDot: 80, scope2x: 75, scope4x: 65, sniper: 50, gyro: 250 },
+            black6: { general: 88, redDot: 83, scope2x: 78, scope4x: 68, sniper: 53, gyro: 260 },
+            legion: { general: 90, redDot: 85, scope2x: 80, scope4x: 70, sniper: 55, gyro: 270 },
+            ipadpro: { general: 75, redDot: 70, scope2x: 65, scope4x: 55, sniper: 45, gyro: 200 },
+            ipadair: { general: 80, redDot: 75, scope2x: 70, scope4x: 60, sniper: 48, gyro: 220 },
+            s9u: { general: 78, redDot: 73, scope2x: 68, scope4x: 58, sniper: 47, gyro: 210 }
+        };
+
+        let currentPlayStyle = 'balanced';
+        let aimTrainerScore = 0;
+        let aimTrainerClicks = 0;
+        let aimTrainerHits = 0;
+        let aimTrainerActive = false;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderWeapons('all');
+            initCrosshair();
+        });
+
+        // Crosshair follow mouse
+        function initCrosshair() {
+            const crosshair = document.getElementById('crosshair');
+            document.addEventListener('mousemove', (e) => {
+                crosshair.style.left = e.clientX - 10 + 'px';
+                crosshair.style.top = e.clientY - 10 + 'px';
+            });
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll to section
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Filter weapons
+        function filterWeapons(category) {
+            // Update tabs
+            document.querySelectorAll('.weapon-tab').forEach(tab => {
+                if (tab.dataset.category === category) {
+                    tab.classList.add('tab-active');
+                    tab.classList.remove('bg-gray-800');
+                } else {
+                    tab.classList.remove('tab-active');
+                    tab.classList.add('bg-gray-800');
+                }
+            });
+            
+            renderWeapons(category);
+        }
+
+        // Render weapons grid
+        function renderWeapons(category) {
+            const grid = document.getElementById('weapons-grid');
+            const filtered = category === 'all' ? weapons : weapons.filter(w => w.category === category);
+            
+            grid.innerHTML = filtered.map(weapon => `
+                <div class="gun-card glass-card rounded-xl p-6 cursor-pointer transition-all duration-300" onclick="showWeaponDetail('${weapon.id}')">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-4xl">${weapon.image}</div>
+                        <span class="text-xs uppercase bg-gray-700 px-2 py-1 rounded">${weapon.category}</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">${weapon.name}</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Damage</span>
+                            <div class="w-24 stat-bar">
+                                <div class="stat-fill" style="width: ${weapon.damage}%"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Fire Rate</span>
+                            <div class="w-24 stat-bar">
+                                <div class="stat-fill" style="width: ${weapon.rate}%"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Accuracy</span>
+                            <div class="w-24 stat-bar">
+                                <div class="stat-fill" style="width: ${weapon.accuracy}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-700">
+                        <p class="text-xs text-orange-400 font-bold">Click for headshot guide</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Show weapon detail modal
+        function showWeaponDetail(weaponId) {
+            const weapon = weapons.find(w => w.id === weaponId);
+            const modal = document.getElementById('weapon-modal');
+            const content = document.getElementById('weapon-detail-content');
+            
+            content.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="text-6xl mb-4">${weapon.image}</div>
+                        <h2 class="text-3xl font-bold mb-2">${weapon.name}</h2>
+                        <span class="inline-block bg-orange-500 text-black px-3 py-1 rounded-full text-sm font-bold uppercase mb-4">${weapon.category}</span>
+                        
+                        <div class="space-y-3 mb-6">
+                            ${['damage', 'rate', 'range', 'accuracy'].map(stat => `
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="capitalize">${stat}</span>
+                                        <span class="font-bold">${weapon[stat]}/100</span>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: ${weapon[stat]}%"></div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-orange-400">Headshot Mastery Guide</h3>
+                        <div class="bg-gray-800/50 p-4 rounded-lg mb-4">
+                            <p class="text-lg">${weapon.headshotTip}</p>
+                        </div>
+                        
+                        <h4 class="font-bold mb-2">Recommended Attachments:</h4>
+                        <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                            <li>• <span class="text-orange-400">Muzzle:</span> Level 3 (Reduces recoil)</li>
+                            <li>• <span class="text-orange-400">Foregrip:</span> Vertical or Laser (Stability)</li>
+                            <li>• <span class="text-orange-400">Magazine:</span> Extended Quickdraw</li>
+                            <li>• <span class="text-orange-400">Stock:</span> Tactical Stock</li>
+                        </ul>
+                        
+                        <h4 class="font-bold mb-2">Best Range:</h4>
+                        <div class="flex gap-2">
+                            ${weapon.category === 'smg' || weapon.category === 'shotgun' ? 
+                                '<span class="px-3 py-1 bg-green-500/20 text-green-400 rounded">Close (0-15m)</span>' : ''}
+                            ${weapon.category === 'ar' ? 
+                                '<span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded">Mid (15-50m)</span>' : ''}
+                            ${weapon.category === 'sniper' ? 
+                                '<span class="px-3 py-1 bg-red-500/20 text-red-400 rounded">Long (50m+)</span>' : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeWeaponModal() {
+            document.getElementById('weapon-modal').classList.add('hidden');
+        }
+
+        // Set play style
+        function setPlayStyle(style) {
+            currentPlayStyle = style;
+            document.querySelectorAll('.play-style-btn').forEach(btn => {
+                if (btn.dataset.style === style) {
+                    btn.classList.add('border-orange-500', 'bg-orange-500/20');
+                    btn.classList.remove('border-gray-600');
+                } else {
+                    btn.classList.remove('border-orange-500', 'bg-orange-500/20');
+                    btn.classList.add('border-gray-600');
+                }
+            });
+            updateSensitivity();
+        }
+
+        // Update sensitivity display
+        function updateSensitivity() {
+            const device = document.getElementById('device-select').value;
+            const resultsDiv = document.getElementById('sensitivity-results');
+            
+            if (!device) return;
+            
+            let baseSens = sensitivityData[device];
+            if (!baseSens) return;
+            
+            // Adjust for play style
+            const multipliers = {
+                aggressive: { general: 1.1, redDot: 1.1, scope2x: 1.05, scope4x: 1.0, sniper: 0.95, gyro: 1.2 },
+                balanced: { general: 1.0, redDot: 1.0, scope2x: 1.0, scope4x: 1.0, sniper: 1.0, gyro: 1.0 },
+                passive: { general: 0.9, redDot: 0.9, scope2x: 0.95, scope4x: 1.0, sniper: 1.05, gyro: 0.8 }
+            };
+            
+            const mult = multipliers[currentPlayStyle];
+            const sens = {
+                general: Math.round(baseSens.general * mult.general),
+                redDot: Math.round(baseSens.redDot * mult.redDot),
+                scope2x: Math.round(baseSens.scope2x * mult.scope2x),
+                scope4x: Math.round(baseSens.scope4x * mult.scope4x),
+                sniper: Math.round(baseSens.sniper * mult.sniper),
+                gyro: Math.round(baseSens.gyro * mult.gyro)
+            };
+            
+            resultsDiv.innerHTML = `
+                <div class="space-y-4 animate-pulse">
+                    <div class="flex justify-between items-center p-3 bg-gray-800 rounded-lg">
+                        <span class="font-bold">General</span>
+                        <span class="text-2xl font-bold text-orange-400">${sens.general}</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-gray-800 rounded-lg">
+                        <span class="font-bold">Red Dot</span>
+                        <span class="text-2xl font-bold text-orange-400">${sens.redDot}</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-gray-800 rounded-lg">
+                        <span class="font-bold">2x Scope</span>
+                        <span class="text-2xl font-bold text-orange-400">${sens.scope2x}</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-gray-800 rounded-lg">
+                        <span class="font-bold">4x Scope</span>
+                        <span class="text-2xl font-bold text-orange-400">${sens.scope4x}</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-gray-800 rounded-lg">
+                        <span class="font-bold">Sniper</span>
+                        <span class="text-2xl font-bold text-orange-400">${sens.sniper}</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-gray-800 rounded-lg border-2 border-orange-500">
+                        <span class="font-bold">Gyroscope</span>
+                        <span class="text-2xl font-bold text-yellow-400">${sens.gyro}%</span>
+                    </div>
+                </div>
+                <button onclick="copySensitivity()" class="mt-4 w-full py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm transition">
+                    <i class="fas fa-copy mr-2"></i>Copy Settings
+                </button>
+            `;
+        }
+
+        function copySensitivity() {
+            alert('Settings copied! Apply these in Free Fire Settings > Sensitivity');
+        }
+
+        // Aim Trainer
+        function startAimTrainer() {
+            const container = document.getElementById('aim-trainer');
+            if (aimTrainerActive) return;
+            
+            aimTrainerActive = true;
+            aimTrainerScore = 0;
+            aimTrainerClicks = 0;
+            aimTrainerHits = 0;
+            updateAimStats();
+            
+            container.innerHTML = '';
+            container.style.cursor = 'crosshair';
+            
+            spawnTarget();
+            
+            // End after 30 seconds
+            setTimeout(() => {
+                aimTrainerActive = false;
+                container.innerHTML = `
+                    <div class="absolute inset-0 flex flex-col items-center justify-center">
+                        <div class="text-3xl font-bold mb-2">Time's Up!</div>
+                        <div class="text-xl">Final Score: ${aimTrainerScore}</div>
+                        <div class="text-lg text-gray-400">Accuracy: ${Math.round((aimTrainerHits/aimTrainerClicks)*100) || 0}%</div>
+                        <button onclick="startAimTrainer()" class="mt-4 px-6 py-2 bg-orange-500 rounded text-black font-bold">Play Again</button>
+                    </div>
+                `;
+            }, 30000);
+        }
+
+        function spawnTarget() {
+            if (!aimTrainerActive) return;
+            
+            const container = document.getElementById('aim-trainer');
+            const target = document.createElement('div');
+            const size = Math.random() * 30 + 20; // 20-50px
+            
+            target.className = 'absolute rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 cursor-pointer hover:scale-110 transition-transform';
+            target.style.width = size + 'px';
+            target.style.height = size + 'px';
+            target.style.left = Math.random() * (container.offsetWidth - size) + 'px';
+            target.style.top = Math.random() * (container.offsetHeight - size) + 'px';
+            
+            target.onclick = (e) => {
+                e.stopPropagation();
+                aimTrainerScore += Math.round(100 - size);
+                aimTrainerHits++;
+                aimTrainerClicks++;
+                updateAimStats();
+                target.remove();
+                setTimeout(spawnTarget, 100);
+            };
+            
+            container.appendChild(target);
+            
+            // Remove after 2 seconds if not clicked
+            setTimeout(() => {
+                if (target.parentNode) {
+                    target.remove();
+                    if (aimTrainerActive) spawnTarget();
+                }
+            }, 2000);
+        }
+
+        document.getElementById('aim-trainer').addEventListener('click', () => {
+            if (aimTrainerActive) {
+                aimTrainerClicks++;
+                updateAimStats();
+            }
+        });
+
+        function updateAimStats() {
+            document.getElementById('score-display').textContent = `Score: ${aimTrainerScore}`;
+            const accuracy = aimTrainerClicks > 0 ? Math.round((aimTrainerHits/aimTrainerClicks)*100) : 100;
+            document.getElementById('accuracy-display').textContent = `Accuracy: ${accuracy}%`;
+        }
+
+        // Rank Calculator
+        function calculateRankProgress() {
+            const currentRank = parseInt(document.getElementById('current-rank').value);
+            const placement = parseInt(document.getElementById('avg-placement').value);
+            const kills = parseInt(document.getElementById('kills-per-match').value);
+            
+            const killPoints = kills * 5;
+            const totalPoints = placement + killPoints;
+            const matchesToGrandmaster = Math.ceil((3000 - currentRank) / totalPoints);
+            
+            const resultDiv = document.getElementById('rank-result');
+            resultDiv.classList.remove('hidden');
+            resultDiv.innerHTML = `
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-green-400">+${totalPoints}</div>
+                        <div class="text-sm text-gray-400">Avg RP per match</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-orange-400">${matchesToGrandmaster}</div>
+                        <div class="text-sm text-gray-400">Matches to Grandmaster</div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-gray-700 rounded text-sm">
+                    <i class="fas fa-info-circle text-orange-400 mr-2"></i>
+                    Play ${Math.ceil(matchesToGrandmaster/30)} matches/day to reach Grandmaster in 1 month
+                </div>
+            `;
+        }
+
+        // Close modal on outside click
+        document.getElementById('weapon-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'weapon-modal') closeWeaponModal();
+        });
+    </script>
+</body>
+</html>
